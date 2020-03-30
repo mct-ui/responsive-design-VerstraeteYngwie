@@ -242,6 +242,11 @@
   .o-row--neutral-x-light {
     background-color: #F7F7FA;
   }
+
+  .o-row--gradient-1 {
+    background: linear-gradient(to top right, #5051DB, #3887F7);
+    color: #fff;
+}
   
   /* size modifiers */
   
@@ -396,192 +401,190 @@
   \*------------------------------------*/
   
   /*
-      Component: header
-      ---
-      Main header of the website
-  */
-  
-  .c-header__nav {
-    color: #5051db;
-  }
-  
-  .c-header__nav {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 16px;
-  }
-  
-  @media (min-width: 992px) {
-    .c-header {
-      display: flex;
-      flex-direction: row;
-      flex-wrap: wrap;
-      justify-content: space-between;
-      align-items: center;
-      width: 100%;
-      height: 132px;
-    }
-  
-    .c-header__nav {
-      margin: 0 0 0 0;
-    }
-  }
-  
-/*
-    Component: CTA link
+    Component: Logo
     ---
-    Small cta link with custom animation
+    Website main logo
 */
 
-.c-link-cta {
-    position: relative;
-    display: inline-block;
-    text-decoration: none;
-    font-size: 16px;
-    line-height: 24px;
-    font-weight: 400;
-    padding: 4px 0;
-    transition: color .175s ease-in;
-}
-
-.c-link-cta,
-.c-link-cta:visited,
-.c-link-cta:active {
-    color: #7373F5;
-}
-
-.c-link-cta::after {
-    content: "";
-    display: block;
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    height: 1px;
-    width: 100%;
-    background-color: #7373F5;
-    transform: scaleX(.5);
-    transform-origin: left;
-    transition-property: transform backgrounc-color;
-    transition-duration: .175s;
-    transition-timing-function: ease-in;
-}
-
-.c-link-cta:hover {
-    color: #3E3EA8;
-}
-
-.c-link-cta:hover::after {
-    transform: scaleX(1);
-    background-color: #3E3EA8;
-}
-
-  /*
-      Component: Nav
-      ---
-      Main navigation of the site
-  */
-  
-  .c-nav {
-    font-size: 18px;
-    line-height: 24px;
-  }
-  
-  .c-nav__link {
-    text-decoration: none;
-    font-weight: 400px;
-    display: block;
-  }
-  
-  .c-nav__link,
-  .c-nav__link:visited,
-  .c-nav__link:active {
-    color: #202024;
-    font-size: 18px;
-  }
-  
-  .c-nav__link--meta,
-  .c-nav__link--meta:visited,
-  .c-nav__link--meta:active {
-    color: #6c6c75;
-    font-size: 16px;
-  }
-  
-  .c-nav__link .is-selected .c-nav__link:hover,
-  .c-nav__link:focus {
-    color: #5051db;
-  }
-  
-  .c-nav__list {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: flex-start;
-    align-items: center;
-    /* margin-bottom: 16px; */
-  }
-  
-  .c-nav__item {
-    margin-left: 32px;
-  }
-  
-  .c-nav__item:first-child {
-    margin-left: 0;
-  }
-  
-  @media (min-width: 768px) {
-    .c-nav__list {
-      margin-bottom: 0;
-    }
-  }
-  
-  /*
-      Component: Logo
-      ---
-      Flatiron Logo
-  */
-  
-  .c-logo {
+.c-logo {
     height: 32px;
-    margin: 16px 0;
-  }
-  
-  .c-logo__symbol {
-    height: 100%;
-  }
-  
-  .c-logo__purple {
-    fill: #5051db;
-  
-    will-change: fill;
-    transition: fill 300ms ease-in-out;
-  }
-  
-  .c-logo__symbol:hover > .c-logo__purple {
-    fill: #3887f7;
-  }
-  
-  .c-logo__blue {
-    fill: #3887f7;
-  
-    will-change: fill;
-    transition: fill 300ms ease-in-out;
-  }
-  
-  .c-logo__symbol:hover > .c-logo__blue {
-    fill: #5051db;
-  }
-  
-  @media (min-width: 992px) {
-    .c-logo {
-      height: 40px;
-      margin: 0 0 0 0;
-    }
-  }
+    display: flex;
+    align-items: center;
+}
 
-  /*
+.c-logo__symbol {
+    height: inherit;
+}
+
+@media (min-width: 768px) {
+    .c-logo {
+        height: 40px;
+    }
+}
+
+/*
+    Component: header
+    ---
+    Main header of the website
+*/
+
+.c-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.c-header__nav {
+    display: none;
+}
+
+@media (min-width: 992px) {
+    .c-header__logo,
+    .c-header__nav {
+        flex-grow: 1;
+        flex-basis: 50%;
+    }
+
+    .c-header__nav {
+        display: flex;
+        justify-content: flex-end;
+    }
+
+    .c-header__nav--main {
+        flex-grow: 2;
+        justify-content: center;
+    }
+
+    .c-header__mobile-nav-trigger {
+        display: none;
+    }
+}
+
+/*
+    Component: footer
+    ---
+    Main footer of the website
+*/
+
+.c-footer {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.c-footer__logo {
+    width: 100%;
+}
+
+.c-footer__nav {
+    width: 50%;
+}
+
+@media (min-width: 768px) {
+    .c-footer {
+        justify-content: center;
+        align-items: center;
+    }
+
+    .c-footer__logo {
+        display: flex;
+        justify-content: center;
+        padding: 0 12px;
+    }
+
+    .c-footer__nav {
+        width: auto;
+        padding: 0 16px;
+    }
+}
+
+@media (min-width: 992px) {
+    .c-footer {
+        justify-content: space-between;
+    }
+
+    .c-footer__nav {
+        padding: 0;
+    }
+
+    .c-footer__logo + .c-footer__nav {
+        order: -1;
+    }
+
+    .c-footer__logo {
+        width: auto;
+    }
+
+    /*
+        Bonus: real centering with CSS
+        Checkout: https://css-tricks.com/centering-css-complete-guide/
+    */
+
+    /* .c-footer__logo {
+        width: auto;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+    .c-footer__logo .c-logo {
+        margin-bottom: 0;
+    } */
+}
+
+/*
+    Component: Nav
+    ---
+    Main navigation of the site
+*/
+
+.c-nav {
+    font-size: 18px;
+    line-height: 24px;
+}
+
+.c-nav--meta {
+    font-size: 16px;
+}
+
+.c-nav__link {
+    text-decoration: none;
+    font-weight: 400;
+    display: block;
+    padding: 8px 0;
+}
+
+.c-nav__link,
+.c-nav__link:visited,
+.c-nav__link:active {
+    color: #202024;
+}
+
+.c-nav__link--meta,
+.c-nav__link--meta:visited,
+.c-nav__link--meta:active {
+    color: #6C6C75;
+}
+
+.is-selected .c-nav__link,
+.c-nav__link:hover,
+.c-nav__link:focus {
+    color: #5051db;
+}
+
+@media (min-width: 768px) {
+    .c-nav__list {
+        display: flex;
+        margin-left: -16px;
+        margin-right: -16px;
+    }
+
+    .c-nav__link {
+        padding: 8px 16px;
+    }
+}
+
+/*
     Component: Lead
     ---
     Lead type treatments to style everything that differs from standard typography elements
@@ -653,6 +656,132 @@
         font-size: 66px;
         line-height: 72px;
     }
+}
+
+/*
+    Component: figure
+    ---
+    Special type of figure and figcaption
+*/
+
+.c-figure {
+    position: relative;
+}
+
+.c-figure__caption {
+    line-height: 15px;
+    margin-top: 8px;
+    padding-left: 6px;
+    padding-top: 1px;
+    border: 2px solid #5051DB;
+    border-width: 0 0 0 2px;
+}
+
+@media (min-width: 768px) {
+    .c-figure__caption--absolute {
+        position: absolute;
+        top: 0;
+        right: 0;
+        margin-right: 8px;
+        text-align: right;
+        background-color: #fff;
+        padding: 16px;
+        max-width: 260px;
+        border-width: 0 4px 0 0;
+    }
+}
+
+/*
+    Component: Title icon
+    ---
+    Special type of title with icon
+*/
+
+.c-title-icon {
+    display: flex;
+    align-items: flex-start;
+}
+
+.c-title-icon__icon {
+    height: 70px;
+    margin-right: 20px;
+}
+
+.c-title-icon__path {
+    fill: #202024;
+}
+
+@media (min-width: 768px) {
+    .c-title-icon__icon {
+        height: 84px;
+    }
+}
+
+@media (min-width: 1200px) {
+    .c-title-icon__icon {
+        height: 112px;
+    }
+}
+
+/*
+    Component: CTA link
+    ---
+    Small cta link with custom animation
+*/
+
+.c-link-cta {
+    position: relative;
+    display: inline-block;
+    text-decoration: none;
+    font-size: 16px;
+    line-height: 24px;
+    font-weight: 400;
+    padding: 4px 0;
+}
+
+.c-link-cta,
+.c-link-cta:visited,
+.c-link-cta:active {
+    color: #7373F5;
+}
+
+.c-link-cta::after {
+    content: "";
+    display: block;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 1px;
+    width: 100%;
+    background-color: #7373F5;
+    transform: scaleX(.5);
+    transform-origin: left;
+    transition-property: transform, background-color;
+    transition-duration: .175s;
+    transition-timing-function: ease;
+}
+
+.c-link-cta:hover {
+    color: #3E3EA8;
+}
+
+.c-link-cta:hover::after {
+    transform: scaleX(1);
+    background-color: #3E3EA8;
+}
+
+/* inversed */
+
+.c-link-cta--inverse,
+.c-link-cta--inverse:visited,
+.c-link-cta--inverse:active,
+.c-link-cta--inverse:hover {
+    color: #fff;
+}
+
+.c-link-cta--inverse::after,
+.c-link-cta--inverse:hover::after {
+    background-color: #fff;
 }
   
   /*------------------------------------*\
