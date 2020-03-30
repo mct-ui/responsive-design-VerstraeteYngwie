@@ -5,25 +5,25 @@
 @font-face {
     font-family: 'HK Grotesk Web';
     font-weight: 200;
-    src: url('../fonts/hkgrotesk-light-webfont.woff2') format('woff2'), url(),
+    src: url('../fonts/hkgrotesk-light-webfont.woff2') format('woff2'),
       url('../fonts/hkgrotesk-light-webfont.woff') format('woff');
-  }
+}
   
-  @font-face {
+@font-face {
     font-family: 'HK Grotesk Web';
     font-weight: 400;
-    src: url('../fonts/hkgrotesk-regular-webfont.woff2') format('woff2'), url(),
+    src: url('../fonts/hkgrotesk-regular-webfont.woff2') format('woff2'),
       url('../fonts/hkgrotesk-regular-webfont.woff') format('woff');
-  }
+}
   
-  @font-face {
+@font-face {
     font-family: 'HK Grotesk Web';
     font-weight: 600;
-    src: url('../fonts/hkgrotesk-medium-webfont.woff2') format('woff2'), url(),
+    src: url('../fonts/hkgrotesk-medium-webfont.woff2') format('woff2'),
       url('../fonts/hkgrotesk-medium-webfont.woff') format('woff');
-  }
+}
   
-  /*------------------------------------*\
+/*------------------------------------*\
     #GENERIC
   \*------------------------------------*/
   
@@ -204,7 +204,8 @@
   */
   
   .o-section {
-    display: flow-root;
+    display: flex;
+    flex-direction: column;
   }
   
   .o-section + .o-section {
@@ -235,6 +236,12 @@
     padding: 24px 24px 0;
     display: flow-root;
   }
+
+  /* color modifiers */
+
+  .o-row--neutral-x-light {
+    background-color: #F7F7FA;
+  }
   
   /* size modifiers */
   
@@ -264,7 +271,7 @@
     margin-left: auto;
     margin-right: auto;
     width: 100%;
-    max-width: 70.5em; /* 90 * 16px = 1440px */
+    max-width: 56.4em; /* 56.4 * 20px = 1128px */
   }
   
   /*
